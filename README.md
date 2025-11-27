@@ -15,7 +15,7 @@ El **prompt del agente** ha sido diseñado y optimizado *exclusivamente* para ge
 2. Las librerías Python `openai` y `rich`.
 3. La **clave API de OpenAI**, que debe estar configurada como variable de entorno.
 
-## ⚙️ Instalación
+## ⚙️ Instalación y ejecución
 1. **Clonación del Repositorio**:
 ```bash
     git clone [https://github.com/tu-usuario/Metasploitable2-DefGen.git](https://github.com/tu-usuario/Metasploitable2-DefGen.git)
@@ -63,6 +63,7 @@ La herramienta espera archivos JSON que contengan la información de la vulnerab
 
 Archivo **possible_Backdoor_Ingreslock.json**:
 
+```bash
 {
   "target": "Target1",
   "result": {
@@ -79,10 +80,12 @@ Archivo **possible_Backdoor_Ingreslock.json**:
     "solution": "A whole cleanup of the infected system is recommended.",
     "solution_type": "Workaround"
   }
-} 
+}
+```
 
 Archivo **phpinfo_output_reporting_http.json**:
 
+```bash
 {
   "target": "Target1",
   "result": {
@@ -109,6 +112,7 @@ Archivo **phpinfo_output_reporting_http.json**:
     "solution_type": "Workaround"
   }
 }
+```
 
 ## 📂 Estructura de Salida
 Los scripts generados se guardarán en un directorio estructurado por fecha dentro del directorio de salida (`out_scripts` por defecto):
