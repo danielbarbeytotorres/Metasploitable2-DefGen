@@ -25,7 +25,7 @@ El **prompt del agente** ha sido diseñado y optimizado *exclusivamente* para ge
 2. **Creación y Activación de un Entorno Virtual**:
 ```bash
     python3 -m venv venv
-    source venv/bin/activate # En Linux/macOS
+    source venv/bin/activate
 ```
 
 3. **Instalación de las dependencias**:
@@ -130,3 +130,6 @@ Cada script generado será un fichero ejecutable de Bash (`.sh`) con permisos `7
 * **Acceso SSH (TCP/22):** Bajo ninguna circunstancia se debe bloquear o deshabilitar el servicio SSH. El script inserta una regla `ACCEPT` para SSH antes de cualquier regla `DROP` general.
 * **Interacción Manual:** Si la solución requiere una contraseña o *input* interactivo (`vncpasswd`, `passwd`), el LLM no inventa nada. En su lugar, aísla el servicio de forma no interactiva (pararlo o ligarlo a `127.0.0.1`) y registra la tarea manual pendiente en `/tmp/mitigation_todo.log`.
 * **Comandos Permitidos:** Restricción estricta a comandos básicos de Ubuntu 8.04 (SysV init) como `sed`, `grep`, `iptables`, `invoke-rc-d`, `update-rc-d`, etc., prohibiendo herramientas modernas como `systemctl` o `nft`.
+
+## Otros
+Este agente usa exactamente el modelo gpt-4o de OpenAI. Si deseas cambiar el modelo por otro de tu elección, modifica la variable `MODEL` en el fichero `agent.py` (linea 36).
